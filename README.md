@@ -11,8 +11,8 @@ The analysis covers:
 All insights are visualised in an interactive dashboard built in Microsoft Power BI using data prepared in MySQL.
 
 ## Tools & Technologies
-- MySQL — data storage and transformation
-- Microsoft Power BI — dashboard and visual analytics
+- MySQL - data storage and transformation
+- Microsoft Power BI - dashboard and visual analytics
 
 ## Business Questions
 This analysis addresses several key business questions:
@@ -23,7 +23,7 @@ This analysis addresses several key business questions:
 - How can customers be segmented by financial health and engagement?
 
 ## Dashboard
-![Dashboard](dashboard/saas_churn_dashboard.png)
+![Dashboard](saas_churn_dashboard.png)
 
 ## Key Findings
 
@@ -62,8 +62,8 @@ The analysis distinguishes between three types of churn, which are often conflat
 
 ### Customer Segmentation
 Every customer is classified into one of three segments:
-- Active — engaged and financially healthy
-- Engagement Risk — active but disengaged
-- Financial Churn — subscription cancelled
+- Active - engaged and financially healthy
+- Engagement Risk - active but disengaged
+- Financial Churn - subscription cancelled
 
 This segmentation allows the business to identify at-risk customers earlier and intervene before revenue is lost.
