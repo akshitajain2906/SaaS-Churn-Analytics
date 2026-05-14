@@ -23,7 +23,7 @@ This analysis addresses several key business questions:
 - How can customers be segmented by financial health and engagement?
 
 ## Dashboard
-![Dashboard](saas_churn_dashboard.png)
+![Dashboard](saas_churn_dashboard.PNG)
 
 ## Key Findings
 
