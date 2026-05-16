@@ -94,19 +94,25 @@ having max(ua.event_date) is null or
 max(ua.event_date) < (select report_date from reference_date) - interval 90 day;
 
 -- Section 6 - Final Customer Classification 
-with reference_date as (
-select max(event_date) as report_date from user_activity),
+with subscription_reference as (
+select max(coalesce(end_date,start_date)) as report_date
+from subscriptions),
+activity_reference as (
+select max(event_date) as report_date
+from user_activity),
 latest_login as (
 select customer_id, max(event_date) as last_login
-from user_activity 
+from user_activity
 where event_type = 'Login'
 group by customer_id)
 select c.customer_id, c.name, c.country,
-case when s.status = 'Canceled' then 'Financial Churn'
-when s.status = 'Active' and (ll.last_login is null or ll.last_login < r.report_date - interval 90 day) then 'Engagement Risk'
+case when s.status = 'Canceled'
+or (s.status = 'Active' and s.end_date is not null and s.end_date < sr.report_date) then 'Financial Churn'
+when s.status = 'Active'
+and (ll.last_login is null or ll.last_login < ar.report_date - interval 90 day) then 'Engagement Risk'
 else 'Active' end as customer_status
-from customers c left join subscriptions s
-on c.customer_id = s.customer_id
-left join latest_login ll
-on c.customer_id = ll.customer_id
-cross join reference_date r ;
+from customers c
+left join subscriptions s on c.customer_id = s.customer_id
+left join latest_login ll on c.customer_id = ll.customer_id
+cross join subscription_reference sr
+cross join activity_reference ar;
