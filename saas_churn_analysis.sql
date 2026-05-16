@@ -115,4 +115,4 @@ from customers c
 left join subscriptions s on c.customer_id = s.customer_id
 left join latest_login ll on c.customer_id = ll.customer_id
 cross join subscription_reference sr
-cross join activity_reference ar;
+cross join activity_reference ar; 
