@@ -66,4 +66,4 @@ Every customer is classified into one of three segments:
 - Engagement Risk - active but disengaged
 - Financial Churn - subscription cancelled
 
-This segmentation allows the business to identify at-risk customers earlier and intervene before revenue is lost.
+This segmentation allows the business to identify at-risk customers earlier and intervene before revenue is lost. 
