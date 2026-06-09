@@ -40,7 +40,7 @@ A segment of active subscribers shows no feature usage in 90 or more days. This 
 More than 50,000 customers are on the Basic plan against only 19,884 on Premium. Engaged Basic subscribers represent the highest-probability upgrade candidates. Converting even a small fraction to Standard or Premium generates compounding revenue without acquiring a single new customer.
 
 ## Methodology
-All time-based calculations use a dynamic reference date derived from the dataset rather than hardcoded values:
+All time-based calculations anchor to a reference date derived from the data itself rather than using CURDATE(). The dataset is static, so CURDATE() would return different results every time the same queries are run against unchanged data. Anchoring to the maximum date in the dataset keeps results consistent and reproducible.
 
 ```sql
 WITH reference_date AS (
@@ -48,8 +48,6 @@ WITH reference_date AS (
     FROM subscriptions
 )
 ```
-
-This ensures the analysis remains fully reproducible as new data is added.
 
 ### Churn Classification Model
 The analysis distinguishes between three types of churn, which are often conflated in traditional reporting:
