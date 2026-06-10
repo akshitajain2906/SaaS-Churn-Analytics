@@ -15,7 +15,6 @@ All insights are visualised in an interactive dashboard built in Microsoft Power
 - Microsoft Power BI - dashboard and visual analytics
 
 ## Business Questions
-This analysis addresses several key business questions:
 - What is the true state of the subscription base?
 - How many customers have churned and what is the revenue impact?
 - Which active subscribers are disengaged and at risk of cancelling?
@@ -27,16 +26,16 @@ This analysis addresses several key business questions:
 
 ## Key Findings
 
-**Financial Churn**
+**Financial Churn**  
 30% of subscriptions have churned. The customer classification model identifies exactly who they are, enabling the business to analyse common patterns and build an early warning system before the next wave cancels.
 
-**Engagement Risk**
+**Engagement Risk**  
 19,000 active subscribers have not logged in for 90 or more days. These customers are the highest-priority re-engagement target. They are still paying but already disengaged, making them the most likely next wave of cancellations. A targeted outreach campaign here costs far less than acquiring a replacement customer.
 
-**Silent Churn**
+**Silent Churn**  
 A segment of active subscribers shows no feature usage in 90 or more days. This signals a product adoption failure, not a pricing problem. The intervention is better onboarding and feature education, not discounting.
 
-**Upsell Opportunity**
+**Upsell Opportunity**  
 More than 50,000 customers are on the Basic plan against only 19,884 on Premium. Engaged Basic subscribers represent the highest-probability upgrade candidates. Converting even a small fraction to Standard or Premium generates compounding revenue without acquiring a single new customer.
 
 ## Methodology
@@ -59,12 +58,14 @@ The analysis distinguishes between three types of churn, which are often conflat
 | Silent Churn | Active subscription but no feature usage for 90+ days |
 
 ### Customer Segmentation
-Every customer is classified into one of three segments:
-- Active - engaged and financially healthy
-- Engagement Risk - active but disengaged
-- Financial Churn - subscription cancelled
+Every customer is classified into one of four segments:
 
-This segmentation allows the business to identify at-risk customers earlier and intervene before revenue is lost.
+| Segment | Definition |
+|---|---|
+| Active | Engaged and financially healthy |
+| Engagement Risk | Active but disengaged |
+| Financial Churn | Subscription cancelled or expired |
+| No Subscription | Signed up but no subscription record |
 
 ## Business Implications
-Three actions follow directly from this analysis. First, the 19,000 engagement-risk customers should be prioritised for re-engagement campaigns before they convert to financial churn, intervening here is cheaper than acquiring new customers. Second, the silent churn segment represents product adoption failure, not pricing failure, the fix is onboarding and feature education, not discounting. Third, with over 50,000 customers on Basic, a targeted upsell motion toward engaged lower-tier subscribers is the highest-leverage revenue opportunity available without adding a single new customer.
+Three actions follow directly from this analysis. First, the 19,000 engagement-risk customers should be prioritised for re-engagement campaigns before they convert to financial churn — intervening here is cheaper than acquiring new customers. Second, the silent churn segment represents a product adoption failure, not a pricing failure — the fix is onboarding and feature education, not discounting. Third, with over 50,000 customers on Basic, a targeted upsell motion toward engaged lower-tier subscribers is the highest-leverage revenue opportunity available without adding a single new customer.
